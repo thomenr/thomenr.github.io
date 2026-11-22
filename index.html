@@ -4,25 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      background: transparent;
-    }
-
-    .bar {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      width: 40px;
-      height: 79vh;
-      transform: translateX(-50%);
-      background: #FFCCCC;
-    }
+    html, body { width: 100%; height: 100%; margin: 0; background: transparent; }
+    .bar { position: fixed; bottom: 0; left: 50%; width: 24px; height: 100vh; transform: translateX(-50%); }
+    .fill { position: absolute; bottom: 0; width: 100%; height: var(--value); background: #FF5555; }
+    .tick { position: absolute; left: -4px; width: 32px; height: 2px; background: #000; }
+    .value-label { position: absolute; right: calc(100% + 12px); bottom: var(--value); transform: translateY(50%); color: #000; font: 16px Arial, sans-serif; white-space: nowrap; }
   </style>
 </head>
-<body>
-  <div class="bar"></div>
+<body style="--value: 79%">
+  <div class="bar">
+    <div class="fill"></div>
+    <span class="tick" style="bottom: 0%"></span>
+    <span class="tick" style="bottom: 25%"></span>
+    <span class="tick" style="bottom: 50%"></span>
+    <span class="tick" style="bottom: 75%"></span>
+    <span class="tick" style="bottom: 100%"></span>
+    <span class="value-label" id="value-label"></span>
+  </div>
+  <script>
+    document.getElementById("value-label").textContent =
+      getComputedStyle(document.body).getPropertyValue("--value").trim();
+  </script>
 </body>
 </html>
