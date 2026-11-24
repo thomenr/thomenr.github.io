@@ -8,10 +8,10 @@
     .bar { position: fixed; bottom: 0; left: 50%; width: 24px; height: 100vh; transform: translateX(-50%); }
     .fill { position: absolute; bottom: 0; width: 100%; height: var(--value); background: #FF5555; }
     .tick { position: absolute; left: -4px; width: 32px; height: 2px; background: #000; }
-    .value-label { position: absolute; right: calc(100% + 12px); bottom: var(--value); transform: translateY(50%); color: #FFF; font: 16px Arial, sans-serif; white-space: nowrap; }
+    .value-label { position: absolute; right: calc(0% - 6px); bottom: var(--value); transform: translateY(50% + 10px); color: #FFF; font: 16px Arial, sans-serif; white-space: nowrap; }
   </style>
 </head>
-<body style="--value: 79%">
+<body style="--value: 95%">
   <div class="bar">
     <div class="fill"></div>
     <span class="tick" style="bottom: 0%"></span>
